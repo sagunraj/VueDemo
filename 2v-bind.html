@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <h1 v-bind:title="title">Hover over '{{message}}' to see something. </h1>
+        <img v-bind:src="url" v-bind:alt="title" v-bind:title="title"/> <!-- Putting a colon ':' at the beginning of an attribute also means that v-bind has been used, which makes the data dynamic.-->
+    </div>
+</body>
+<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello!',
+            title: "This page was loaded on "+ new Date(),
+            url: "http://vuejs.org/images/logo.png"
+        }
+    })
+</script>
+</html>

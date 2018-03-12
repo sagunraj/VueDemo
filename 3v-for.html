@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li style="list-style-type: none" v-for="todo in todos">{{todo.id}}. {{todo.text}}</li>
+        </ul>
+    </div> 
+</body>
+<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue World!',
+            todos: [
+                {text: 'Learn Vuew', id:1},
+                {text: 'Like the video', id:2},
+                {text: 'Subscribe', id:3}
+            ]
+        }
+    })
+</script>
+</html>

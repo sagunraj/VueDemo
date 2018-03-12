@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <h1 v-text = "message"></h1> <!--Add the 'message' to the <h1> element.-->
+        <h1 v-html = "intro"></h1>   <!--Add the 'intro' to the <h1> element, including HTML.-->
+        <h1 v-show = "viewed">You have viewed this page.</h1> <!--Condition checking. If 'viewed==false', the element is invisible.-->
+        <h1 v-if = "viewed==viewed">This is the element after v-if condition becomes true.</h1> <!--Similar to v-show, but able to either add or remove elements from the DOM. Not just hide it.--> 
+        <h1 v-else>This is the element after v-if condition becomes false.</h1> <!--Else statment for if-->
+        <h1 v-pre>{{message}}</h1> <!--Everything is preformatted within v-pre-->
+        <h1 v-once>{{message}}</h1> <!--Render it for only one time. The value cannot be updated from browser console.-->
+        <h1 v-cloak>{{message}}</h1>
+    </div> 
+</body>
+<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue World!',
+            intro: "<strong>Welcome to my website.</strong>",
+            viewed: false
+        }
+    })
+</script>
+</html>
